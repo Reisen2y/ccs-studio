@@ -1,0 +1,82 @@
+{
+  "glm-free": {
+    "comment": "示例1：智谱官方免费档 glm-4.7-flash（零成本，限速不限量）。把 Key 换成你自己的即可用",
+    "actual": "所有槽位全部映射 GLM-4.7-Flash（完全免费）",
+    "set": {
+      "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+      "ANTHROPIC_AUTH_TOKEN": "【粘贴你的智谱API Key】",
+      "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-4.7-flash",
+      "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-4.7-flash",
+      "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-4.7-flash",
+      "API_TIMEOUT_MS": "3000000"
+    },
+    "unset": [
+      "ANTHROPIC_MODEL",
+      "ANTHROPIC_SMALL_FAST_MODEL",
+      "CLAUDE_CODE_SUBAGENT_MODEL",
+      "CLAUDE_CODE_AUTO_COMPACT_WINDOW",
+      "CLAUDE_CODE_EFFORT_LEVEL"
+    ],
+    "model": null
+  },
+  "kimi": {
+    "comment": "示例2：Moonshot 官方 Anthropic 兼容端点（服务端自动映射 Claude 模型名）",
+    "actual": "Kimi K2 系列",
+    "set": {
+      "ANTHROPIC_BASE_URL": "https://api.moonshot.cn/anthropic",
+      "ANTHROPIC_AUTH_TOKEN": "【粘贴你的Moonshot API Key】"
+    },
+    "unset": [
+      "ANTHROPIC_MODEL",
+      "ANTHROPIC_DEFAULT_OPUS_MODEL",
+      "ANTHROPIC_DEFAULT_SONNET_MODEL",
+      "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+      "ANTHROPIC_SMALL_FAST_MODEL",
+      "CLAUDE_CODE_SUBAGENT_MODEL",
+      "CLAUDE_CODE_AUTO_COMPACT_WINDOW",
+      "API_TIMEOUT_MS",
+      "CLAUDE_CODE_EFFORT_LEVEL"
+    ],
+    "model": null
+  },
+  "my-relay": {
+    "comment": "示例3：任意第三方中转站（OpenAI 风格中转普遍兼容 /v1/messages），模型名以站点公告为准，别猜",
+    "actual": "取决于站点渠道",
+    "set": {
+      "ANTHROPIC_BASE_URL": "https://your-relay.example.com",
+      "ANTHROPIC_AUTH_TOKEN": "【粘贴你的中转站Key】",
+      "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4.1-flash",
+      "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4.1-flash",
+      "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4.1-flash",
+      "API_TIMEOUT_MS": "600000"
+    },
+    "unset": [
+      "ANTHROPIC_MODEL",
+      "ANTHROPIC_SMALL_FAST_MODEL",
+      "CLAUDE_CODE_SUBAGENT_MODEL",
+      "CLAUDE_CODE_AUTO_COMPACT_WINDOW",
+      "CLAUDE_CODE_EFFORT_LEVEL"
+    ],
+    "model": null
+  },
+  "local-gateway": {
+    "comment": "示例4：本机自建网关（如 one-api / new-api / wb_proxy 等），仅监听 127.0.0.1，不出公网",
+    "actual": "取决于网关路由",
+    "set": {
+      "ANTHROPIC_BASE_URL": "http://127.0.0.1:8788",
+      "ANTHROPIC_AUTH_TOKEN": "【粘贴你的网关Key】",
+      "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4.1-flash",
+      "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4.1-flash",
+      "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4.1-flash",
+      "CLAUDE_CODE_EFFORT_LEVEL": "max",
+      "API_TIMEOUT_MS": "600000"
+    },
+    "unset": [
+      "ANTHROPIC_MODEL",
+      "ANTHROPIC_SMALL_FAST_MODEL",
+      "CLAUDE_CODE_SUBAGENT_MODEL",
+      "CLAUDE_CODE_AUTO_COMPACT_WINDOW"
+    ],
+    "model": null
+  }
+}
