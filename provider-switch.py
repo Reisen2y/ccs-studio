@@ -21,8 +21,8 @@ def mask(k):
 def main():
     args = [a for a in sys.argv[1:] if a != "--force"]
     force = "--force" in sys.argv
-    presets = json.load(open(PRESETS, encoding="utf-8"))
-    settings = json.load(open(SETTINGS, encoding="utf-8"))
+    presets = json.load(open(PRESETS, encoding="utf-8-sig"))
+    settings = json.load(open(SETTINGS, encoding="utf-8-sig"))
     cur_env = settings.get("env", {})
 
     def match_score(p):

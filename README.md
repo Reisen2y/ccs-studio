@@ -4,9 +4,7 @@
 >
 > **One-click provider switching for Claude Code. A GUI and a CLI sharing the exact same config.**
 
-<!-- 截图占位：在此插入主界面截图
-![screenshot](screenshots/main.png)
--->
+![主界面](screenshots/main.png)
 
 ---
 

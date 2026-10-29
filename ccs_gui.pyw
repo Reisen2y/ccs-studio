@@ -114,6 +114,8 @@ def save_json(path, data):
 def load_json_or_bak(path):
     """加载 JSON；主文件损坏时自动从 .bak 恢复。
 
+    用 utf-8-sig 读取以兼容带 BOM 的文件（Windows 记事本保存的配置常带 BOM）。
+
     返回 (data, restored, corrupt)：
       文件不存在            -> (None, False, False)
       正常                  -> (data, False, False)
@@ -123,13 +125,13 @@ def load_json_or_bak(path):
     if not os.path.exists(path):
         return None, False, False
     try:
-        with open(path, encoding="utf-8") as f:
+        with open(path, encoding="utf-8-sig") as f:
             return json.load(f), False, False
     except Exception:
         bak = path + ".bak"
         if os.path.exists(bak):
             try:
-                with open(bak, encoding="utf-8") as f:
+                with open(bak, encoding="utf-8-sig") as f:
                     data = json.load(f)
                 tmp = path + ".tmp"
                 with open(tmp, "w", encoding="utf-8") as f:
